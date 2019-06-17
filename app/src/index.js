@@ -6,13 +6,16 @@ import TodoList from './components/todo-list'
 
 
 const App = () => {
-    const loginBox = <span>Log in</span>
+    const todoData = [
+        {label: 'Drink Coffee', important: false, id: 1},
+        {label: 'Make app', important: true, id: 2},
+        {label: 'Have a lunch', important: false, id: 3},
+    ]
     return (
         <div>
-            {loginBox}
             <AppHeader />
             <SearchPanel />
-            <TodoList />
+            <TodoList todos={todoData}/>
         </div>
     )
 }
