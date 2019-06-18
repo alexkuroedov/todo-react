@@ -6,39 +6,40 @@ export default class TodoListItem extends Component {
 
     render = () => {
         const { label, onDeleted,
-                onToggleImportant,
-                onToggleDone,
-                important, done } = this.props
+            onToggleImportant,
+            onToggleDone,
+            important, done } = this.props
 
-        let classNames = 'todo-list-item'
-        if(done){
+        let classNames = 'todo-item-label title'
+        if (done) {
             classNames += ' done'
         }
-        if(important){
+        if (important) {
             classNames += ' important'
         }
-        
+
         return (
-            <span className="todo-list-item">
+
+            <React.Fragment>
                 <span
-                    className={classNames}
-                    onClick={onToggleDone}
-                    >{label}</span>
-                <button
-                    type="button"
-                    className="btn btn-outline-success btn-small"
+                    className="todo-item-important-button"
                     onClick={onToggleImportant}
                 >
-                    <i className="fa fa-exclamation"></i>
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-outline-danger btn-small"
+                    <i class="material-icons circle">assistant_photo</i></span>
+                <span
+                    class={classNames}
+                    onClick={onToggleDone}
+    
+                >{label}
+                </span>
+    
+                <span
+                    class="todo-item-delete-button secondary-content"
                     onClick={onDeleted}
-                >
-                    <i className="fa fa-trash-o"></i>
-                </button>
-            </span>
+    
+                ><i class="material-icons">delete_forever</i></span>
+            </React.Fragment>
+                    
         )
 
     }

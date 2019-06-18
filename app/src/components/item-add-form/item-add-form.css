@@ -8,4 +8,6 @@
 
 .btn.add{
     width: 150px;
+    float: right;
+    margin-bottom: 60px;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './item-status-filter.css'
 
 export default class ItemStatusFilter extends Component {
     buttons = [
@@ -10,7 +11,7 @@ export default class ItemStatusFilter extends Component {
         const {filter, onFilterChange} = this.props
         const buttons = this.buttons.map(({name, label}) => {
             const isActive = filter === name
-            const cl = isActive ? 'btn-info' : 'btn-outline-secondary'
+            const cl = isActive ? 'btn-info' : ' teal lighten-3'
             return (
                 <button 
                     type="button"
@@ -23,7 +24,7 @@ export default class ItemStatusFilter extends Component {
             )
         })
         return (
-            <div className="btn-group">
+            <div className="btn-group right-align">
                 {buttons}
             </div>
         )

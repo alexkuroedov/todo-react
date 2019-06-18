@@ -4,15 +4,18 @@ import SearchPanel from '../search-panel/search-panel'
 import TodoList from '../todo-list/todo-list'
 import ItemStatusFilter from '../item-status-filter/item-status-filter'
 import ItemAddForm from '../item-add-form/item-add-form'
+import './app.css'
 
 export default class App extends Component {
     maxId = 100
 
     state = {
         todoData: [
-            this.createTodoItem('Drink Coffee'),
-            this.createTodoItem('Make App'),
-            this.createTodoItem('Have a lunch'),
+            this.createTodoItem('Go Shopping'),
+            this.createTodoItem('Wash the car'),
+            this.createTodoItem('Do some work'),
+            this.createTodoItem('Meet a nice person'),
+            this.createTodoItem('Play with cat'),
         ],
         term: '',
         filter: 'all'
@@ -124,9 +127,9 @@ export default class App extends Component {
         const todoCount = todoData.length - doneCount
 
         return (
-            <div className="todo-app">
-                <AppHeader toDo={todoCount} done={doneCount} />
-                <div className="search-panel d-flex">
+            <div className="container todo-app">
+                <AppHeader className="col ss12 ms4"toDo={todoCount} done={doneCount} />
+                <div className="search-panel">
                     <SearchPanel 
                         onSearchChange={this.onSearchChange}
                     />
